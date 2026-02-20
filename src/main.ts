@@ -76,14 +76,11 @@ loader.load(
     const rightGroup = model.getObjectByName("mainStructure_f2_right");
     addIfMesh(rightGroup?.getObjectByName("Cube004"), wallMeshes);
 
-    //* Apply ONE material to ALL of them at once
     const wallMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
     wallMeshes.forEach((mesh) => {
       mesh.material = wallMaterial;
     });
 
-    // Handle remaining parts of Groups that were NOT walls (frames/glass)
-    // mainStructure_f1_wallEntranceRight frames/glass
     if (wallEntranceGroup) {
       const plane0 = wallEntranceGroup.getObjectByName("Plane003");
       const plane1 = wallEntranceGroup.getObjectByName("Plane003_1");
@@ -110,7 +107,7 @@ loader.load(
     const brick_walls = model.getObjectByName("brick_walls");
     if (brick_walls instanceof THREE.Mesh) {
       brick_walls.material = new THREE.MeshStandardMaterial({
-        color: 0xb36b3f,
+        color: 0xffffff,
       });
     }
 
@@ -149,7 +146,7 @@ loader.load(
     const outside_bricks = model.getObjectByName("outside_bricks");
     if (outside_bricks instanceof THREE.Mesh) {
       outside_bricks.material = new THREE.MeshStandardMaterial({
-        color: 0xd77b6a,
+        color: 0x111199,
       });
     }
 
